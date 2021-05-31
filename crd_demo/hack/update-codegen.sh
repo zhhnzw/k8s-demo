@@ -26,6 +26,8 @@ SCRIPT_ROOT=$(dirname "${BASH_SOURCE[0]}")/..
 #   instead of the $GOPATH directly. For normal projects this can be dropped.
 
 ./vendor/k8s.io/code-generator/generate-groups.sh all \
-  github.com/zhhnzw/k8s-demo/crd_demo/pkg github.com/zhhnzw/k8s-demo/crd_demo/pkg/apis \
-  samplecrd:v1 --go-header-file ${SCRIPT_ROOT}/hack/boilerplate.go.txt
+  github.com/zhhnzw/k8s-demo/crd_demo/pkg/client \
+  github.com/zhhnzw/k8s-demo/crd_demo/pkg/apis \
+  samplecrd:v1 \
+  --go-header-file ${SCRIPT_ROOT}/hack/boilerplate.go.txt
 
