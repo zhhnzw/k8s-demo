@@ -1,0 +1,13 @@
+domain: mock.com
+layout: go.kubebuilder.io/v3
+projectName: operator-demo
+repo: github.com/zhhnzw/operator-demo/v1
+resources:
+- crdVersion: v1
+  group: zhhnzw
+  kind: CustomType
+  version: v1
+version: 3-alpha
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
