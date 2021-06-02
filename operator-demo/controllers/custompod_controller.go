@@ -87,7 +87,7 @@ func (r *CustomPodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (
 	logr.Info(strconv.Itoa(len(existingPods.Items)))
 	logr.Info("2...")
 	// 从上一步Pod列表中拿到对应Pod的名称
-	var existingPodNames []string
+	existingPodNames := make([]string, 0, 1)
 	for _, pod := range existingPods.Items {
 		if pod.GetObjectMeta().GetDeletionTimestamp() != nil {
 			// 说明这个Pod被删除了，跳过
@@ -163,7 +163,7 @@ func newPodForCR(cr *zhhnzwv1.CustomPod) *corev1.Pod {
 	ls := map[string]string{"app": cr.Name}
 	return &corev1.Pod{
 		ObjectMeta: metav1.ObjectMeta{
-			GenerateName: cr.Name + "-pod",
+			GenerateName: cr.Name + "-pod-",
 			Namespace:    cr.Namespace,
 			Labels:       ls,
 		},
