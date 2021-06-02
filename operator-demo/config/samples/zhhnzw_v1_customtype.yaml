@@ -1,0 +1,7 @@
+apiVersion: zhhnzw.mock.com/v1
+kind: CustomType
+metadata:
+  name: customtype-sample
+spec:
+  # Add fields here
+  foo: bar
