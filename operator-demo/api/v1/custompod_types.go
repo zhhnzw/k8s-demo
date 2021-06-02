@@ -23,42 +23,44 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
-// CustomTypeSpec defines the desired state of CustomType
-type CustomTypeSpec struct {
+// CustomPodSpec defines the desired state of CustomPod
+type CustomPodSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of CustomType. Edit customtype_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	Replicas int `json:"replicas"`
 }
 
-// CustomTypeStatus defines the observed state of CustomType
-type CustomTypeStatus struct {
+// CustomPodStatus defines the observed state of CustomPod
+type CustomPodStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+
+	Replicas int      `json:"replicas"`
+	PodNames []string `json:"podNames"` // 记录已经运行的 Pod 名字
 }
 
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
 
-// CustomType is the Schema for the customtypes API
-type CustomType struct {
+// CustomPod is the Schema for the custompods API
+type CustomPod struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
-	Spec   CustomTypeSpec   `json:"spec,omitempty"`
-	Status CustomTypeStatus `json:"status,omitempty"`
+	Spec   CustomPodSpec   `json:"spec,omitempty"`
+	Status CustomPodStatus `json:"status,omitempty"`
 }
 
 //+kubebuilder:object:root=true
 
-// CustomTypeList contains a list of CustomType
-type CustomTypeList struct {
+// CustomPodList contains a list of CustomPod
+type CustomPodList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []CustomType `json:"items"`
+	Items           []CustomPod `json:"items"`
 }
 
 func init() {
-	SchemeBuilder.Register(&CustomType{}, &CustomTypeList{})
+	SchemeBuilder.Register(&CustomPod{}, &CustomPodList{})
 }
