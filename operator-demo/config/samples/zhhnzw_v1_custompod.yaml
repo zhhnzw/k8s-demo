@@ -1,0 +1,6 @@
+apiVersion: zhhnzw.mock.com/v1
+kind: CustomPod
+metadata:
+  name: custompod-sample
+spec:
+  replicas: 1

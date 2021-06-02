@@ -1,13 +1,13 @@
-# permissions for end users to view customtypes.
+# permissions for end users to view custompods.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: customtype-viewer-role
+  name: custompod-viewer-role
 rules:
 - apiGroups:
   - zhhnzw.mock.com
   resources:
-  - customtypes
+  - custompods
   verbs:
   - get
   - list
@@ -15,6 +15,6 @@ rules:
 - apiGroups:
   - zhhnzw.mock.com
   resources:
-  - customtypes/status
+  - custompods/status
   verbs:
   - get

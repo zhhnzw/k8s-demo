@@ -1,13 +1,15 @@
-# permissions for end users to edit customtypes.
+
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: customtype-editor-role
+  creationTimestamp: null
+  name: manager-role
 rules:
 - apiGroups:
   - zhhnzw.mock.com
   resources:
-  - customtypes
+  - custompods
   verbs:
   - create
   - delete
@@ -19,6 +21,14 @@ rules:
 - apiGroups:
   - zhhnzw.mock.com
   resources:
-  - customtypes/status
+  - custompods/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - zhhnzw.mock.com
+  resources:
+  - custompods/status
   verbs:
   - get
+  - patch
+  - update

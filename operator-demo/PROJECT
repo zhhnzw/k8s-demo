@@ -13,7 +13,7 @@ resources:
   controller: true
   domain: mock.com
   group: zhhnzw
-  kind: CustomType
+  kind: CustomPod
   path: github.com/zhhnzw/operator-demo/v1/api/v1
   version: v1
 version: "3"

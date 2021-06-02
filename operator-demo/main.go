@@ -78,11 +78,11 @@ func main() {
 		os.Exit(1)
 	}
 
-	if err = (&controllers.CustomTypeReconciler{
+	if err = (&controllers.CustomPodReconciler{
 		Client: mgr.GetClient(),
 		Scheme: mgr.GetScheme(),
 	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "unable to create controller", "controller", "CustomType")
+		setupLog.Error(err, "unable to create controller", "controller", "CustomPod")
 		os.Exit(1)
 	}
 	//+kubebuilder:scaffold:builder

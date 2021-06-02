@@ -1,4 +1,4 @@
 ## Append samples you want in your CSV to this file as resources ##
 resources:
-- zhhnzw_v1_customtype.yaml
+- zhhnzw_v1_custompod.yaml
 #+kubebuilder:scaffold:manifestskustomizesamples
