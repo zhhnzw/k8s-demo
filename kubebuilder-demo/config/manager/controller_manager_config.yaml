@@ -8,4 +8,4 @@ webhook:
   port: 9443
 leaderElection:
   leaderElect: true
-  resourceName: 1259e286.mock.com
+  resourceName: b7236345.mock.com

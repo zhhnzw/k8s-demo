@@ -1,0 +1,16 @@
+domain: mock.com
+layout:
+- go.kubebuilder.io/v3
+projectName: kubebuilder-demo
+repo: github.com/zhhnzw/k8s-demo/kubebuilder-demo/v1
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: mock.com
+  group: zhhnzw
+  kind: CustomPod
+  path: github.com/zhhnzw/k8s-demo/kubebuilder-demo/v1/api/v1
+  version: v1
+version: "3"

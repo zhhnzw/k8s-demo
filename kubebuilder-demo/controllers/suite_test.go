@@ -30,7 +30,7 @@ import (
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	zhhnzwv1 "github.com/zhhnzw/operator-demo/v1/api/v1"
+	zhhnzwv1 "github.com/zhhnzw/k8s-demo/kubebuilder-demo/v1/api/v1"
 	//+kubebuilder:scaffold:imports
 )
 

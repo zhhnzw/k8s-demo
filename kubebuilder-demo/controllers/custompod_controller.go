@@ -31,7 +31,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/log"
 	"strconv"
 
-	zhhnzwv1 "github.com/zhhnzw/operator-demo/v1/api/v1"
+	zhhnzwv1 "github.com/zhhnzw/k8s-demo/kubebuilder-demo/v1/api/v1"
 )
 
 // CustomPodReconciler reconciles a CustomPod object
@@ -87,7 +87,7 @@ func (r *CustomPodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (
 	logr.Info(strconv.Itoa(len(existingPods.Items)))
 	logr.Info("2...")
 	// 从上一步Pod列表中拿到对应Pod的名称
-	existingPodNames := make([]string, 0, 1)
+	existingPodNames := make([]string, 0, instance.Spec.Replicas)
 	for _, pod := range existingPods.Items {
 		if pod.GetObjectMeta().GetDeletionTimestamp() != nil {
 			// 说明这个Pod被删除了，跳过

@@ -31,8 +31,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/healthz"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	zhhnzwv1 "github.com/zhhnzw/operator-demo/v1/api/v1"
-	"github.com/zhhnzw/operator-demo/v1/controllers"
+	zhhnzwv1 "github.com/zhhnzw/k8s-demo/kubebuilder-demo/v1/api/v1"
+	"github.com/zhhnzw/k8s-demo/kubebuilder-demo/v1/controllers"
 	//+kubebuilder:scaffold:imports
 )
 
@@ -71,7 +71,7 @@ func main() {
 		Port:                   9443,
 		HealthProbeBindAddress: probeAddr,
 		LeaderElection:         enableLeaderElection,
-		LeaderElectionID:       "1259e286.mock.com",
+		LeaderElectionID:       "b7236345.mock.com",
 	})
 	if err != nil {
 		setupLog.Error(err, "unable to start manager")
