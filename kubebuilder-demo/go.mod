@@ -1,4 +1,4 @@
-module github.com/zhhnzw/k8s-demo/kubebuilder-demo/v1
+module github.com/zhhnzw/k8s-demo/kubebuilder-demo
 
 go 1.16
 

@@ -31,7 +31,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/log"
 	"strconv"
 
-	zhhnzwv1 "github.com/zhhnzw/k8s-demo/kubebuilder-demo/v1/api/v1"
+	zhhnzwv1 "github.com/zhhnzw/k8s-demo/kubebuilder-demo/api/v1"
 )
 
 // CustomPodReconciler reconciles a CustomPod object
