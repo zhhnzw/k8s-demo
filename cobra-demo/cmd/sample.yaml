@@ -1,0 +1,2 @@
+apiVersion: zhhnzw.mock.com/v1
+kind: CustomPod
