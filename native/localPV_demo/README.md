@@ -1,5 +1,5 @@
 ### 准备工作
-先在宿主机上创建挂载点，命令示例：
+挂载 RAM Disk（内存盘）来模拟本地磁盘，在Linux下的命令示例：
 ```bash
 # 在 node-1 上执行
 $ mkdir /mnt/disks
@@ -9,7 +9,7 @@ $ for vol in vol1 vol2 vol3; do
 done
 ```
 
-mac 不支持 tmpfs，可用 RAM disk 本地测试效果，
+mac 不支持 tmpfs，可用 diskutil，
 
 RAM disk 把内存当硬盘使，推出该 Ramdisk 即可释放内存，然后绑定在本地磁盘地址的数据也会全部丢失。
 
